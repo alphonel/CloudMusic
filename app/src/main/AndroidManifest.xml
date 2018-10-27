@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.swufe.wp.cloudmusic">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".utils.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".Service.MusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".Activity.WelcomeActivity"
+            android:label="@string/title_activity_welcome"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            />
+        </activity>
+        <activity
+            android:name=".Activity.HomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ScanActivity"
+            android:label="@string/scan_music"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.LocalMusicActivity"
+            android:label="@string/local_music"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".Service.MusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".Receiver.PlayerManagerReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".Activity.PlayActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/PlaylistActivityTheme" />
+        <activity
+            android:name=".Activity.LastMyloveActivity"
+            android:label="@string/last_play"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PlaylistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PlaylistActivityTheme" />
+        <activity
+            android:name=".Activity.ModelActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ThemeActivity"
+            android:label="@string/theme_center"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activity.AboutActivity"></activity>
+    </application>
+
+</manifest>
